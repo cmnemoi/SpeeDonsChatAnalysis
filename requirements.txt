@@ -1,0 +1,7 @@
+pandas
+seaborn
+plotly
+tqdm
+wordcloud
+spacy
+chat-downloader==0.1.10

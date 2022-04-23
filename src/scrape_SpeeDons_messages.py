@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     #get chats objects into a list, one for each VOD
     for i, vod in enumerate(SPEEDONS_VODS):
-        chats.append(downloader.get_chat(url=vod, output=f"../data/chat_vod{i+1}.json")) 
+        chats.append(downloader.get_chat(url=vod, format="UTF-8", output=f"../data/chat_vod{i+1}.json")) 
 
     #get actual messages, takes 11 minutes on Google Colab
     print("Scrapping messages...")
@@ -37,6 +37,6 @@ if __name__ == "__main__":
     #merge all files to get final SpeeDons chat messages file
     files=["../data/chat_vod1.json", "../data/chat_vod2.json", "../data/chat_vod3.json"]
     print("Merging files...")
-    with open("../data/SpeeDons_chat.json", "w") as outfile:
+    with open("../data/SpeeDons_chat.json", "w", encoding="UTF-8") as outfile:
         outfile.write("{}".format("\n".join([open(f, "r").read() for f in files])))
     print('Files merged successfully into ../data/SpeeDons_chat.json !')

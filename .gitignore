@@ -130,3 +130,5 @@ dmypy.json
 
 #JSON files
 *.json
+
+features.txt
